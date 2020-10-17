@@ -17,7 +17,12 @@ class Server {
     this.server = http.createServer(this.app);
     this.socketio = socket(this.server)
     this.app.use(cors({}))
+    
+  }
 
+  initServer() {
+    this.includeRoutes();
+    this.server.listen(PORT, () => console.log('Server has started on port ' + PORT));
     if (process.env.NODE_ENV === 'production') {
       // Set static folder
       this.app.use(express.static('client/build'));
@@ -26,12 +31,6 @@ class Server {
         res.sendFile(path.resolve(__dirname, 'client', 'build', 'index.html'));
       });
     }
-    
-  }
-
-  initServer() {
-    this.includeRoutes();
-    this.server.listen(PORT, () => console.log('Server has started on port ' + PORT));
   }
 
   includeRoutes() {
