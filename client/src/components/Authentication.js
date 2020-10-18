@@ -97,7 +97,7 @@ export default class Authentication extends Component {
 
           document.getElementById("Login-form").reset();
         }
-      })
+      }).catch(err=>console.log('fault'));
   }
 
   upload = (e) => {
