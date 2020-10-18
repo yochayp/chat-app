@@ -24,9 +24,9 @@ class Routes {
 
         this.app.get('/handleLogin', routeHandler.handleLogIn)
 
-        this.app.get("*", (req, res) => {
-            res.sendFile(path.join(__dirname, "client", "build", "index.html"));
-        });
+        this.app.get('*', (req, res) => {
+            res.sendFile(path.resolve(__dirname, 'client', 'build', 'index.html'));
+          });
 
         this.app.get("/", (req, res) => res.send('hello world'))
 

@@ -26,11 +26,10 @@ class Server {
       // Set static folder
       this.app.use(express.static('client/build'));
     
-      this.app.get('*', (req, res) => {
-        res.sendFile(path.resolve(__dirname, 'client', 'build', 'index.html'));
-      });
+     
     }
     this.includeRoutes();
+ 
     this.server.listen(PORT, () => console.log('Server has started on port ' + PORT));
    
   }
