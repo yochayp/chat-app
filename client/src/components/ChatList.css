@@ -1,0 +1,52 @@
+.list-group-item-chat-list {
+    margin-bottom: -15px !important;
+    margin-top: -10px;
+    border-bottom: 1px solid rgba(211, 212, 210, 0.897);
+    padding: 10px;
+}
+
+.list-group-item-chat-list:last-child {
+    border-bottom: none;
+}
+
+.last-message-date{
+    margin-top: 20px;
+}
+.lastMessage{
+    margin-top: -10px;
+}
+.username{
+margin-left: 20px;
+margin-top: -25px;
+
+}
+
+.offline {
+    align-content: center;
+    border: 2px solid rgb(158, 1, 1);
+    width: 40px;
+    height: 40px;
+    border-radius: 50%; /*don't forget prefixes*/
+   
+    background-position: center center;
+    /* as mentioned by Vad: */
+    background-size: cover;
+  }
+
+  .online {
+      border: 2px solid rgb(57, 255, 57);
+      align-content: center;
+      width: 40px;
+      height: 40px;
+      border-radius: 50%; /*don't forget prefixes*/
+     
+      background-position: center center;
+      /* as mentioned by Vad: */
+      background-size: cover;
+  }
+
+  .date {
+      white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  }

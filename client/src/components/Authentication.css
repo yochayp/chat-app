@@ -1,0 +1,14 @@
+.container {
+    width: 400px;
+    border: 1px solid rgba(211, 212, 210, 0.897);
+    margin-top: 10%;
+padding: 30px;
+}
+
+.btn.btn-primary {
+    margin-right: 0;
+}
+
+.modal {
+    display: block;
+}

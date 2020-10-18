@@ -1,0 +1,26 @@
+
+ .navbar{  
+    border: 1px solid  rgba(211, 212, 210, 0.897) !important;
+ }
+ .chat {
+   
+    border: 1px solid rgba(211, 212, 210, 0.897);
+ }
+.card {
+    height: 500px;
+}
+
+.profile-image {
+    align-content: center;
+    border: 1px solid  rgba(211, 212, 210, 0.897) !important;
+   width: 60px;
+    height: 60px;
+    border-radius: 50%; /*don't forget prefixes*/
+   
+    background-position: center center;
+   align-self: center;
+    /* as mentioned by Vad: */
+    background-size: cover;
+  }
+
+  

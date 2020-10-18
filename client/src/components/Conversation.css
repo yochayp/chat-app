@@ -1,0 +1,22 @@
+.input-group {
+    display: flex !important;
+}
+
+
+
+
+
+.right {
+    
+    padding: 7px;
+    background-color: #718add;
+}
+.left {
+    padding: 7px;
+    background-color: #dddcdc;
+}
+
+.spiner{
+    position:right;
+    margin-left:45%;
+}
