@@ -59,7 +59,6 @@ export default class Authentication extends Component {
   }
 
   updateProfilePic = (event) => {
-    console.log(event.target.files[0])
     this.setState(
       {
         uploadedImage: event.target.files[0]
@@ -69,7 +68,7 @@ export default class Authentication extends Component {
 
   handleLog = async (e) => {
     e.preventDefault()
-    await axios.get('http://localhost:3000/handleLogin', {
+    await axios.get('/handleLogin', {
       headers: {
         username: this.state.username,
         password: this.state.password,
@@ -105,16 +104,15 @@ export default class Authentication extends Component {
     let data = new FormData();
     data.append('Image', e.target.files[0]);
     data.append('name', e.target.files[0].name);
-    console.log(data.image)
     this.setState(
       {
         formData: data
-      }, () => console.log(this.state.formData)
+      }
     )
     this.setState(
       {
         image: URL.createObjectURL(e.target.files[0])
-      }, () => console.log(this.state.formData)
+      }
     )
   }
 
@@ -130,7 +128,7 @@ export default class Authentication extends Component {
     this.state.uploadedImage?data.append("avatar", this.state.uploadedImage):data.append("avatar", defaultAvatar);
 
 
-    await axios.post('http://localhost:3000/handleSignup', data)
+    await axios.post('/handleSignup', data)
       .then((res) => {
         if (res.data.registered) {
           this.setState(

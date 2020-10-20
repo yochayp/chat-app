@@ -10,7 +10,7 @@ class ServerRequests {
 
     establishConnection(username) {
         try {
-            this.socket = io('http://localhost:3000/', {
+            this.socket = io('/', {
                 _query: { username: username }
             })
         } catch (error) {
