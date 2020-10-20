@@ -16,15 +16,15 @@ export default class Conversation extends Component {
             selectedUser: '',
             showModalMessage: false,
             modalMessage: '',
-            showLoadingSpiner:''
+            showLoadingSpiner: ''
         }
     }
 
     handleClose = () => {
         this.setState(
-          { showModalMessage: false }
+            { showModalMessage: false }
         )
-      }
+    }
     componentDidMount() {
         serverRequests.socket.on('message', (message) => {
             this.props.updateLastMessages(message);
@@ -49,13 +49,12 @@ export default class Conversation extends Component {
         return null;
     }
     componentDidUpdate(prevProps) {
-        console.log('componentdidupdate - conversation')
         if (this.props.selectedUser !== prevProps.selectedUser) {
             serverRequests.getMessages(this.props, (messages) => {
                 this.setState(
-                    { 
+                    {
                         messages: messages,
-                        showLoadingSpiner: false 
+                        showLoadingSpiner: false
                     }
                 )
             })
@@ -73,7 +72,7 @@ export default class Conversation extends Component {
         e.preventDefault();
         if (this.state.message) {
             this.setState(
-                { messages: [...this.state.messages, { fromUser: this.props.username, toUser: this.state.selectedUser, content: this.state.message, date: new Date().toLocaleString()}] }
+                { messages: [...this.state.messages, { fromUser: this.props.username, toUser: this.state.selectedUser, content: this.state.message, date: new Date().toLocaleString() }] }
             )
             serverRequests.sendMessage(
                 {
@@ -91,11 +90,10 @@ export default class Conversation extends Component {
                     content: this.state.message,
                     date: new Date().toLocaleString()
                 }
-                );
+            );
             document.getElementById("sending-message").reset();
-            console.log('sending message ' + this.state.message)
             this.setState(
-                {message:''}
+                { message: '' }
             )
         }
         else {
@@ -123,20 +121,18 @@ export default class Conversation extends Component {
                     <Modal.Body>{this.state.modalMessage}</Modal.Body>
                 </Modal>
                 <Card.Header>
-                    <Media>
-                        <Media.Body> <h3>Chat With - {this.state.selectedUser} </h3></Media.Body>
-                    </Media>
+                    <h3><i className='far fa-comment'></i> </h3>
                 </Card.Header>
                 <Card.Body className='overflow-auto'>
                     {showLoadingSpiner
-                    ?<Ring className='spiner'/>
-                    :<ListGroup >
-                        {this.state.messages.map((message, index) =>
-                            <Media key={index} >
-                                <Col md="auto" className={message.fromUser === this.props.username ? ' ml-auto rounded-lg  right ' : '  rounded-lg  left '}>{message.content}</Col>
-                            </Media>
-                        )}
-                    </ListGroup>
+                        ? <Ring className='spiner' />
+                        : <ListGroup >
+                            {this.state.messages.map((message, index) =>
+                                <Media key={index} >
+                                    <Col md="auto" className={message.fromUser === this.props.username ? ' ml-auto rounded-lg  right ' : '  rounded-lg  left '}>{message.content}</Col>
+                                </Media>
+                            )}
+                        </ListGroup>
                     }
 
                 </Card.Body>
@@ -145,9 +141,7 @@ export default class Conversation extends Component {
                         <InputGroup >
                             <FormControl placeholder="type a message..." onChange={this.handeMessageTyping} />
                             <InputGroup.Append>
-                                <Button type="submit">
-                                    <i className="fa fa-paper-plane" aria-hidden="true"></i>
-                                </Button>
+                                    <i className="fa fa-paper-plane" aria-hidden="true"  type="submit"></i>
                             </InputGroup.Append>
                         </InputGroup>
                     </Form>

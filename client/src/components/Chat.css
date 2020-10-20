@@ -1,15 +1,30 @@
 
  .navbar{  
-    border: 1px solid  rgba(211, 212, 210, 0.897) !important;
+    border-bottom: 1px solid  rgba(211, 212, 210, 0.897) !important;
+    height: 80px;
+    align-items: center!important;
  }
- .chat {
-   
-    border: 1px solid rgba(211, 212, 210, 0.897);
- }
+ .header {
+    border-bottom: 1px solid  rgba(211, 212, 210, 0.897) !important;
+
+    padding: 6px;
+    text-align: center;
+    color: rgb(0, 0, 0);
+    font-size: 30px;
+  }
+  .username {
+      margin-top: 0 !important;
+flex: none!important;  }
+  .logout-button {
+      margin-right: 10px!important;
+  }
 .card {
     height: 500px;
+    margin: 20px;
 }
-
+.card-header {
+    height: 70px;
+}
 .profile-image {
     align-content: center;
     border: 1px solid  rgba(211, 212, 210, 0.897) !important;
@@ -23,4 +38,6 @@
     background-size: cover;
   }
 
-  
+  .user-info {
+      padding-left: 30px;
+  }

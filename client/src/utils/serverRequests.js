@@ -10,7 +10,7 @@ class ServerRequests {
 
     establishConnection(username) {
         try {
-            this.socket = io('/', {
+            this.socket = io('http://localhost:3000/', {
                 _query: { username: username }
             })
         } catch (error) {
@@ -33,7 +33,6 @@ class ServerRequests {
 
     sendMessage(data) {
         this.socket.emit('sendingMessage', data)
-        console.log('inside sending message the date is = '+data.date)
     }
 
     getMessages(data, callback) {

@@ -10,6 +10,7 @@ import bsCustomFileInput from 'bs-custom-file-input'
 import './Authentication.css'
 
 
+
 export default class Authentication extends Component {
 
   constructor(props) {
@@ -68,7 +69,7 @@ export default class Authentication extends Component {
 
   handleLog = async (e) => {
     e.preventDefault()
-    await axios.get('/handleLogin', {
+    await axios.get('http://localhost:3000/handleLogin', {
       headers: {
         username: this.state.username,
         password: this.state.password,
@@ -129,7 +130,7 @@ export default class Authentication extends Component {
     this.state.uploadedImage?data.append("avatar", this.state.uploadedImage):data.append("avatar", defaultAvatar);
 
 
-    await axios.post('/handleSignup', data)
+    await axios.post('http://localhost:3000/handleSignup', data)
       .then((res) => {
         if (res.data.registered) {
           this.setState(

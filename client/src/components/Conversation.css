@@ -4,7 +4,14 @@
 
 
 
+.fa-paper-plane {
+    font-size: 24px;
+    padding: 7px;
+    border: 1px solid  rgba(182, 182, 182, 0.897) !important;
+    background: white;
+    height: 38px;
 
+}
 
 .right {
     

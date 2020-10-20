@@ -80,41 +80,43 @@ export default class ChatList extends Component {
     };
 
     getProfilePic(username) {
-      
+
         let user = this.props.usersInfo.find(user => user.name === username)
-        
 
-        if(user){
-        if(user.avatar){
-        var image = new Buffer(user.avatar.image, 'base64')
-        var base64Flag = 'data:image/jpeg;base64,';
-        var imageStr = this.arrayBufferToBase64(image);
 
-        return  base64Flag+imageStr}
-        else return defaultAvatar}
-        else return defaultAvatar 
+        if (user) {
+            if (user.avatar) {
+                var image = new Buffer(user.avatar.image, 'base64')
+                var base64Flag = 'data:image/jpeg;base64,';
+                var imageStr = this.arrayBufferToBase64(image);
+
+                return base64Flag + imageStr
+            }
+            else return defaultAvatar
+        }
+        else return defaultAvatar
     }
 
     render() {
-        console.log('chatlist rendered')
         return (
             <Card>
-                <Card.Header><h3>Users list</h3></Card.Header>
+                <Card.Header> <h3><i className="material-icons">people</i></h3> </Card.Header>
 
-                <Card.Body className='overflow-auto'>
-                    <ListGroup variant='flush'>
+                <Card.Body className='overflow-auto chat-list-card'>
+                    <ListGroup variant='flush' className='list-group'>
                         {this.state.users.map((user, index) =>
                             <Media as='li' className='list-group-item-chat-list'
                                 key={index} onClick={() => this.handleClick(user.name)}>
-                                <Image
+                                <div className='profileimge'> <Image
                                     className={user.isonline === 'yes' ? 'online' : 'offline'}
                                     src={this.getProfilePic(user.name)} />
-
-                                <Media.Body className='username'>
-                                    <Row>
+                                </div>
+                                <Media.Body className='username-chat-list'>
+                                    <Row >
                                         <Col>
                                             <h3 className='name'> {user.name}  </h3>
                                         </Col>
+
                                         <Col md='auto' className='ml-auto last-message-date'>
                                             <p className='date'>{this.getLastDate(user.name)}</p>
                                         </Col>
