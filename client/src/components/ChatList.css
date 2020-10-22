@@ -1,5 +1,7 @@
 .list-group-item-chat-list {
   align-items: center!important;
+  padding-left: 6px;
+  padding-right: 20px;
 }
 
 
@@ -44,17 +46,26 @@ margin-left: 20px;
   .username-chat-list {
     border-bottom: 1px solid rgba(211, 212, 210, 0.897);
     margin-left: 8px;
+    padding-left: 7px;
     
   }
 
+  .chat-list-header{
+      height: 80px;
+      border-bottom: 1px solid  rgba(211, 212, 210, 0.897) !important;
+      flex: none!important;
+      height: 70px;
+  
+  }
   .parent {
     display: flex;
     flex-direction:row;
   }
 .row {
-    flex-wrap: inherit!important;
 }
 
 .material-icons {
     font-size: 40px;
+    padding-top: 7px;
+    padding-left: 12px;
 }

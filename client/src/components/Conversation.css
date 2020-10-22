@@ -2,28 +2,61 @@
     display: flex !important;
 }
 
-
+.message {
+    margin-bottom: 3px;
+}
 
 .fa-paper-plane {
     font-size: 24px;
-    padding: 7px;
-    border: 1px solid  rgba(182, 182, 182, 0.897) !important;
-    background: white;
-    height: 38px;
+    color: #000;
 
+}
+.send-button {
+    border: 1px solid  rgba(211, 212, 210, 0.897) !important;
+
+}
+
+.fa-comment {
+    padding-top: 10px;
+    padding-left: 12px;
 }
 
 .right {
     
-    padding: 7px;
+    padding: 5px;
     background-color: #718add;
 }
 .left {
-    padding: 7px;
+    padding: 5px;
     background-color: #dddcdc;
 }
-
+.conversation-header {
+    height: 80px;
+    border-bottom: 1px solid  rgba(211, 212, 210, 0.897) !important;
+    flex: none!important;
+    height: 70px;
+}
 .spiner{
+    color: black;
     position:right;
     margin-left:45%;
+}
+.send-message-button {
+background-color: white;
+}
+.type-line {
+    margin-right: 50px;
+    padding: 10px!important;
+    background-color: teal;
+}
+.btn-primary {
+    color: white;
+}
+
+.conversation-body {
+    background-image: url(../lib/background.png);
+    height: 380px;
+}
+.card-body {
+    padding: 10px!important;
 }

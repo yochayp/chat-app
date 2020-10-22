@@ -4,9 +4,15 @@
     height: 80px;
     align-items: center!important;
  }
+ .chat-app {
+    padding: 6px;
+    text-align: center;
+    font-size: 30px;
+    margin-left: 20%;
+ }
  .header {
     border-bottom: 1px solid  rgba(211, 212, 210, 0.897) !important;
-
+background-color:white;
     padding: 6px;
     text-align: center;
     color: rgb(0, 0, 0);
@@ -20,7 +26,7 @@ flex: none!important;  }
   }
 .card {
     height: 500px;
-    margin: 20px;
+    margin-top: 20px;
 }
 .card-header {
     height: 70px;
@@ -41,3 +47,11 @@ flex: none!important;  }
   .user-info {
       padding-left: 30px;
   }
+
+.chat{
+     /* Full height */
+  height: 703px; 
+background-color: rgb(247, 247, 247);
+ 
+}
+

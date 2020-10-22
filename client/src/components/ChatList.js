@@ -100,7 +100,7 @@ export default class ChatList extends Component {
     render() {
         return (
             <Card>
-                <Card.Header> <h3><i className="material-icons">people</i></h3> </Card.Header>
+                <Card.Body className='chat-list-header'> <h3><i className="material-icons">people</i></h3> </Card.Body>
 
                 <Card.Body className='overflow-auto chat-list-card'>
                     <ListGroup variant='flush' className='list-group'>

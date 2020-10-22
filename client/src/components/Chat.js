@@ -151,6 +151,7 @@ export default class Chat extends Component {
                                 <Media.Body className='username'> <h1 className='headline'>{this.state.username}</h1></Media.Body>
                             </Media>
                         </Col>
+                        <div className='chat-app'>Chat-App</div>
                         <Col md='auto' className='ml-auto'>
                             <i className="fa fa-sign-out logout-button" onClick={() => this.logout()}></i>
                         </Col></Row>
