@@ -108,7 +108,7 @@ export default class ChatList extends Component {
                             <Media as='li' className='list-group-item-chat-list'
                                 key={index} onClick={() => this.handleClick(user.name)}>
                                 <div className='profileimge'> <Image
-                                    className={user.isonline === 'yes' ? 'online' : 'offline'}
+                                    className={user.isonline === 'yes' ? 'user online' : 'user offline'}
                                     src={this.getProfilePic(user.name)} />
                                 </div>
                                 <Media.Body className='username-chat-list'>

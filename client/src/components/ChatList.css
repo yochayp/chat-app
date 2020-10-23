@@ -10,9 +10,15 @@ margin-left: 20px;
 }
 
 .offline {
-    align-content: center;
     border: 2px solid rgb(158, 1, 1);
-    width: 40px;
+  }
+  .online {
+    border: 2px solid rgb(57, 255, 57);
+
+}
+  .user{
+   align-content: center;
+   width: 40px;
     height: 40px;
     border-radius: 50%; 
    
@@ -21,16 +27,7 @@ margin-left: 20px;
     background-size: cover;
   }
 
-  .online {
-      border: 2px solid rgb(57, 255, 57);
-      align-content: center;
-      width: 40px;
-      height: 40px;
-      border-radius: 50%;
-     
-      background-position: center center;
-      background-size: cover;
-  }
+  
 
   .date {
   color: rgb(0, 0, 0);
@@ -61,8 +58,6 @@ margin-left: 20px;
     display: flex;
     flex-direction:row;
   }
-.row {
-}
 
 .material-icons {
     font-size: 40px;

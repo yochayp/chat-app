@@ -29,7 +29,8 @@ export default class Authentication extends Component {
       info: {
         image: '',
         name: ''
-      }
+      },
+      fileLabel: 'Choose Profile Avatar'
 
     }
 
@@ -61,14 +62,20 @@ export default class Authentication extends Component {
   updateProfilePic = (event) => {
     this.setState(
       {
-        uploadedImage: event.target.files[0]
+        uploadedImage: event.target.files[0],
+        fileLabel: event.target.files[0].name
+      },()=>{
+        console.log(this.state.uploadedImage)
+    console.log( defaultAvatar)
       }
     )
+
+    
   }
 
   handleLog = async (e) => {
     e.preventDefault()
-    await axios.get('/handleLogin', {
+    await axios.get('http://localhost:3000/handleLogin', {
       headers: {
         username: this.state.username,
         password: this.state.password,
@@ -125,10 +132,11 @@ export default class Authentication extends Component {
 
     data.append("username", this.state.username)
     data.append("password", this.state.password)
-    this.state.uploadedImage?data.append("avatar", this.state.uploadedImage):data.append("avatar", defaultAvatar);
+   if( this.state.uploadedImage)data.append("avatar", this.state.uploadedImage)
+    
 
 
-    await axios.post('/handleSignup', data)
+    await axios.post('http://localhost:3000/handleSignup', data)
       .then((res) => {
         if (res.data.registered) {
           this.setState(
@@ -197,8 +205,9 @@ export default class Authentication extends Component {
               <Form.Group>
               <Form.File
                         id="custom-file"
-                        label="Choose Profile Avatar"
+                        label = {this.state.fileLabel}
                         custom
+                        
                         onChange={this.updateProfilePic}
                     />
               </Form.Group>

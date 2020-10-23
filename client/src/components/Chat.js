@@ -53,13 +53,14 @@ export default class Chat extends Component {
             const user = usersInfo.filter(user => {
                 return user.name === this.state.username
             })
+            if(user[0].avatar){
             const profilepic = user[0].avatar.image;
             var image = new Buffer(profilepic, 'base64')
             var base64Flag = 'data:image/jpeg;base64,';
             var imageStr = this.arrayBufferToBase64(image);
             this.setState(
                 { profilePic: base64Flag + imageStr }
-            )
+            )}
         }
         );
 
