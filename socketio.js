@@ -28,8 +28,7 @@ class SocketIO {
             socket.on('sendingMessage', (data) => {
                 const sendTo = this.users.find(({ name }) => name === data.toUser);
                 if (sendTo) {
-                    console.log('ok')
-
+                console.log('yes');
                     socket.to(sendTo.socketid).emit('message', data)
                     database.sendingMessage(data);
                 }
