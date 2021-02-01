@@ -156,7 +156,8 @@ export default class Conversation extends Component {
                     <Modal.Body>{this.state.modalMessage}</Modal.Body>
                 </Modal>
                 <Card.Body className='conversation-header'>
-                    <h3><i className='far fa-comment'></i> </h3>
+                    <h3><i className='far fa-comment'></i>    {this.props.selectedUser}</h3>
+                
                 </Card.Body>
                 <Card.Body className='overflow-auto conversation-body'>
                     {showLoadingSpiner

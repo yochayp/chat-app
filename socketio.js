@@ -58,16 +58,18 @@ class SocketIO {
             })
 
             socket.on('disconnect', () => {
-console.log('disconnect')
+               
                 const userconnected = this.users.find(({ socketid }) => socketid === socket.id)
-
+                console.log(userconnected);
                 this.users = this.users.filter((user) => {
 
                     return user.socketid !== socket.id
                 })
                 if (userconnected) {
+                    console.log('yes')
                     database.changeToOffline(userconnected, () =>
                         database.getAllUsers(userconnected, (chatList) => {
+                            console.log(chatList)
                             socket.broadcast.emit('update users list', chatList)
                         }))
                 }

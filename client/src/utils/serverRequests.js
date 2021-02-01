@@ -10,7 +10,7 @@ class ServerRequests {
 
     establishConnection(username) {
         try {
-            this.socket = io('/', {
+            this.socket = io('http://localhost:3000/', {
                 _query: { username: username }
             })
         } catch (error) {
@@ -36,24 +36,26 @@ class ServerRequests {
     }
 
     getMessages(data, callback) {
-        this.socket.emit('getMessages', data ,(messages) => {
-callback(messages)
+        this.socket.emit('getMessages', data, (messages) => {
+            callback(messages)
 
         })
     }
 
-    getLastMessages(username,callback) {
-               this.socket.emit('getLastMessages', username, (messages) => {
+    getLastMessages(username, callback) {
+        this.socket.emit('getLastMessages', username, (messages) => {
             callback(messages)
         })
     }
-    
 
-    getUsersInfo(callback){
-        this.socket.emit('getUsersInfo',(usersInfo) => {
+
+    getUsersInfo(callback) {
+        this.socket.emit('getUsersInfo', (usersInfo) => {
             callback(usersInfo)
-    })}
+        })
+    }
     logout() {
+        console.log('logout')
         this.socket.close()
     }
 }

@@ -71,19 +71,20 @@ class Database {
             
             var myquery = { name: username };
             var newvalues = { $set: { isonline: 'yes' } };
-            this.db.collection("users").updateOne(myquery, newvalues, function (err, res) {
+            this.db.collection("users").updateOne(myquery, newvalues,  (err, res) => {
                 if (err) throw err;
             });
     }
     
     changeToOffline(user,callback) {
-      
+      console.log(user.name)
             var myquery = { name: user.name };
             var newvalues = { $set: { isonline: 'no' } };
-            this.db.collection("users").updateOne(myquery, newvalues, function (err, res) {
+            this.db.collection("users").updateOne(myquery, newvalues, (err, res) => {
                 if (err) throw err;
+                callback()
             });
-        callback()
+        
     }   
     
     getUsersInfo(callback){
@@ -109,7 +110,7 @@ class Database {
                 date: message.date,
                 unRead: message.unRead
             };
-            this.db.collection("messages").insertOne(myobj, function (err, res) {
+            this.db.collection("messages").insertOne(myobj, (err, res) => {
                 if (err) throw err;
             });
     }

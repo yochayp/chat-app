@@ -75,7 +75,7 @@ export default class Authentication extends Component {
 
   handleLog = async (e) => {
     e.preventDefault()
-    await axios.get('/handleLogin', {
+    await axios.get('http://localhost:3000/handleLogin', {
       headers: {
         username: this.state.username,
         password: this.state.password,
@@ -136,7 +136,7 @@ export default class Authentication extends Component {
     
 
 
-    await axios.post('/handleSignup', data)
+    await axios.post('http://localhost:3000/handleSignup', data)
       .then((res) => {
         if (res.data.registered) {
           this.setState(
@@ -165,7 +165,7 @@ export default class Authentication extends Component {
     return (
 
 
-      <Container >
+      <Container className= 'authentication' >
         <Modal show={this.state.showInvalidUserName} onHide={this.handleClose} animation={false}>
           <Modal.Header closeButton>
             <Modal.Title>error</Modal.Title>
